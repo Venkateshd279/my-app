@@ -64,3 +64,28 @@
 </build>
 	
 </project>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-clean-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <filesets>
+          <fileset>
+            <directory>${project.build.directory}</directory>
+            <includes>
+              <include>*</include>
+            </includes>
+            <excludes>
+              <exclude>${project.build.finalName}.war</exclude>
+            </excludes>
+            <followSymlinks>false</followSymlinks>
+          </fileset>
+        </filesets>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
